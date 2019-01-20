@@ -1,13 +1,10 @@
-/**
- * Created by john on 2019/1/20.
- */
-let defaultCity="北京"
-try{
-  if(localStorage.city){
-    defaultCity=localStorage.city
+let defaultCity = '上海'
+try {
+  if (localStorage.city) {
+    defaultCity = localStorage.city
   }
-} catch(e){}
+} catch (e) {}
 
 export default {
-  city:defaultCity
+  city: defaultCity
 }
