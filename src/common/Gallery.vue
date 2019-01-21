@@ -47,6 +47,7 @@
   .container >>> .swiper-container
     overflow:inherit
   .container
+    z-index:99
     display:flex
     position:fixed
     flex-direction:column
