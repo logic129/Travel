@@ -17,13 +17,13 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
-  export default {
-    name: 'HomeHeader',
-    computed: {
-      ...mapState(['city'])
-    }
+import { mapState } from 'vuex'
+export default {
+  name: 'HomeHeader',
+  computed: {
+    ...mapState(['city'])
   }
+}
 </script>
 
 <style lang="stylus" scoped>

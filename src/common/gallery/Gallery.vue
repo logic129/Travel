@@ -15,32 +15,32 @@
 </template>
 
 <script>
-  export default {
-    name:'CommonGallery',
-    props:{
-      imgs:{
-        type:Array,
-        default(){
-          return []
-        }
-      }
-    },
-    data(){
-      return{
-        swiperOption:{
-          pagination:'.swiper-pagination',
-          paginationType:'fraction',
-          observeParents:true,
-          observer:true
-        }
-      }
-    },
-    methods:{
-      handleGalleryClick(){
-        this.$emit('close')
+export default {
+  name:'CommonGallery',
+  props:{
+    imgs:{
+      type:Array,
+      default(){
+        return []
       }
     }
+  },
+  data(){
+    return{
+      swiperOption:{
+        pagination:'.swiper-pagination',
+        paginationType:'fraction',
+        observeParents:true,
+        observer:true
+      }
+    }
+  },
+  methods:{
+    handleGalleryClick(){
+      this.$emit('close')
+    }
   }
+}
 </script>
 
 <style lang="stylus" scoped>

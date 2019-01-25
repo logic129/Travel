@@ -45,39 +45,43 @@
 </template>
 
 <script>
-  import Bscroll from 'better-scroll'
-  import { mapState, mapMutations } from 'vuex'
-  export default {
-    name: 'CityList',
-    props: {
-      hot: Array,
-      cities: Object,
-      letter: String
+import Bscroll from 'better-scroll'
+import { mapState, mapMutations } from 'vuex'
+export default {
+  name: 'CityList',
+  props: {
+    hot: Array,
+    cities: Object,
+    letter: String
+  },
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    })
+  },
+  methods: {
+    handleCityClick (city) {
+      this.changeCity(city)
+      this.$router.push('/')
     },
-    computed: {
-      ...mapState({
-        currentCity: 'city'
-      })
-    },
-    methods: {
-      handleCityClick (city) {
-        this.changeCity(city)
-        this.$router.push('/')
-      },
-      ...mapMutations(['changeCity'])
-    },
-    watch: {
-      letter () {
-        if (this.letter) {
-          const element = this.$refs[this.letter][0]
-          this.scroll.scrollToElement(element)
-        }
+    ...mapMutations(['changeCity'])
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
       }
-    },
-    mounted () {
-      this.scroll = new Bscroll(this.$refs.wrapper)
     }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      click:true,
+      startX: 0,
+      startY: 0
+    })
   }
+}
 </script>
 
 <style lang="stylus" scoped>

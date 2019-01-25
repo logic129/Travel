@@ -20,33 +20,33 @@
 </template>
 
 <script>
-  import CommonGallery from 'common/gallery/Gallery'
-  import FadeAnimation from 'common/fade/FadeAnimation'
-  export default {
-    name:'DetailBanner',
-    props:{
-      sightName:String,
-      bannerImg:String,
-      bannerImgs:Array
-    },
-    data(){
-      return {
-        showGallery:false
-      }
-    },
-    methods:{
-      handleBannerClick(){
-        this.showGallery=true
-      },
-      handleGalleryClose(){
-        this.showGallery=false
-      }
-    },
-    components:{
-      CommonGallery,
-      FadeAnimation
+import CommonGallery from '../gallery/Gallery'
+import FadeAnimation from '../fade/FadeAnimation'
+export default {
+  name:'DetailBanner',
+  props:{
+    sightName:String,
+    bannerImg:String,
+    bannerImgs:Array
+  },
+  data(){
+    return {
+      showGallery:false
     }
+  },
+  methods:{
+    handleBannerClick(){
+      this.showGallery=true
+    },
+    handleGalleryClose(){
+      this.showGallery=false
+    }
+  },
+  components:{
+    CommonGallery,
+    FadeAnimation
   }
+}
 </script>
 
 <style lang="stylus" scoped>
